@@ -2,6 +2,7 @@ language: go
 
 env:
         global:
+                - IMAGE_NAME=kodek/hello-travis-docker
                 - secure: "UFyXohGrlgOUy6JkwDZKAdr6T8eiEqu/cjlmnS1Ww7/StVF1250JbjAEDC6K+hOM6Y4NUXx3DNYJdlOcfNQIBG35b1Z0OkUA048cEEyNmJoqcBNlAdxS9SzfT6s3YbXNQlUqNLFSroXoxBCHlPnE8pyNub46pqG8pnbUXW7K4Mh6Cu1wdIyCdqWvZb+Vu5lv1Cvh1Awb9z35iY3vOHhItiT/54V3Jx4icHsNT+bjFJ8GVT/PzZU20RE2FH5Wb323isT9EJDKcJ3AEAG7eJgonx5Dm/8JTFeKqZvV4X+kmInpMEJITZeOhqNnakUqUAwIRYU+0fdygLzZkP3EKzW4GsuwphZiNwNT3IHTGCUyEmsmjgdHnKIqdzU47uvi1WBj1+RrYELo2LgeY1Wc8ftNz07BG7HqoB4FLrV/GAyCvLe5Jg/pBvCpMBMf2XIq0s2lN6CQlhrqb/rV/CiOoGmv9Gj6jKBtpRIChK0/Jwnu2k+7cFknvfINeYncZMBv7VBh5Cg7GRHdf+gdcmKLvSmdDjAdW4YJPLm1GzjL6Wi/1m/uzYgbobKag9YB8+DaisuOVgxBmS39tIiz7QG5rT7YijfBHivyfA7XwHXmY6vCMhADEcV8F7JceJQWlK2P79Qy0dYJzKx2cHqpPtLgDUDupN9bN6LrFdC+PAmoOv2qg8M="
 
 go:
