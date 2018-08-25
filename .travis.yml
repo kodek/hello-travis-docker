@@ -1,22 +1,18 @@
 language: go
-
 env:
-        global:
-                - IMAGE_NAME=kodek/hello-travis-docker
-                - secure: "UFyXohGrlgOUy6JkwDZKAdr6T8eiEqu/cjlmnS1Ww7/StVF1250JbjAEDC6K+hOM6Y4NUXx3DNYJdlOcfNQIBG35b1Z0OkUA048cEEyNmJoqcBNlAdxS9SzfT6s3YbXNQlUqNLFSroXoxBCHlPnE8pyNub46pqG8pnbUXW7K4Mh6Cu1wdIyCdqWvZb+Vu5lv1Cvh1Awb9z35iY3vOHhItiT/54V3Jx4icHsNT+bjFJ8GVT/PzZU20RE2FH5Wb323isT9EJDKcJ3AEAG7eJgonx5Dm/8JTFeKqZvV4X+kmInpMEJITZeOhqNnakUqUAwIRYU+0fdygLzZkP3EKzW4GsuwphZiNwNT3IHTGCUyEmsmjgdHnKIqdzU47uvi1WBj1+RrYELo2LgeY1Wc8ftNz07BG7HqoB4FLrV/GAyCvLe5Jg/pBvCpMBMf2XIq0s2lN6CQlhrqb/rV/CiOoGmv9Gj6jKBtpRIChK0/Jwnu2k+7cFknvfINeYncZMBv7VBh5Cg7GRHdf+gdcmKLvSmdDjAdW4YJPLm1GzjL6Wi/1m/uzYgbobKag9YB8+DaisuOVgxBmS39tIiz7QG5rT7YijfBHivyfA7XwHXmY6vCMhADEcV8F7JceJQWlK2P79Qy0dYJzKx2cHqpPtLgDUDupN9bN6LrFdC+PAmoOv2qg8M="
-
+  global:
+  - IMAGE_NAME=kodek/hello-travis-docker
+  - secure: H+ukZnZyMYg1HYnVSjN0rWiq4QCtBa9t/dOxJjxLzTAG6l/FZ+LFsBjTo480A9LbfirBXP5NNvOOTKs3fh8sDy8cmcCMrRpI2Iy5eMmIj12nX0CbNat9fA8G4bjh/ZuIDehNnMvHIDvgltLjo37Qc3qHIQwI7GpWXFvrBVOGu/3V2clt3ApAdwTxr2H+ke13PrQFEcaBRbgwF2/2j9dvESAL5ekDAdzSLtj4HEuoI6WaWDgj4C+y9UYhFOWbFMY/kaM9ngG22JM1by1gKyHmElVos7xog0lCPNrOXyZcK/GIdEtr7GRkdRvPPn7BHoK3uy4daX/muNXTuGIgBnKhf0OHh5NPjhgptaswpXcKm/vcc77aWzgWtl18LE9NMK1Msw+fIObSRJIOM3lR85d7eOpbzS8SaxhzGuSjfOiyfuxDyYUTUQGfqE+cNk/Dc9SUR5VlmDd/vQ7zEQyjiuJJp/cTWYOGgRnzuV5fFeqsztehnbnq6RUiJeSwbPdQFhjO2So3T1BHbTCU4oCGboJaka048SrNMYcxJV+Sjkxmoqwuiu/BL+fEeHzROxK2tzcS4sZUhDFiHFTOqrUMyPgu6r4rZ7HFvxo4aO+0Vx/iTktVbYhzA1ILFHn0pidjRcgH3zdWpA5Ff2kCEB2x7DnQkUoSKBox9tbBRdqoXcwGnDE=
+  - secure: B5LW8d/3Z7bgaLYlDTbx0C7puJbPfp55zEj07uiYVy1Ts97FftaAy1rwYywf2Y9am5zTCkstCtlMGzx1YL2KDWGcdOQjVGQFl06qsKM35iiWwdrvmJtImydH2HcmT6BufZAf/tPbpOF6db2a0pk7S5nfkpsq4ZcX0cV47+0FFnpxnEcn5ZVHuAHeUjgQ4qCNUF7v1MrPc2psV4GZAdoZ4BK2XM8LAA/gDUph7Ms7LV5zkF6thqjRqNo+1JzwPC427dmMtpLnq6gZ51MfDZskPyX/kLOcEsyqgt831L6+WkQGHhgdgnwFsJeTTkbcVHq5FEh9aSIcCOzlJZyFDk7nFkowBsvdIwn5lQCPAaWnmZIS+/C53KrsjCen7F/mlTOaFeP98sPeaAbjDMu8esVyU03zIsyqKArqQZXDQKK1HdYwRMez6oKG6yNBDrbLayHo5x0Kf/F9KnNc7XGVNaOhGz+7ENYul9J04n/EYHA8+nQO0s36HGAY/PpN78EjoIaPJRFvuPx5wb48sNdu0czORWOvUuVnvs9Ve1TZMijvexmmzzUzLyhKj+MduZ85Bpnxm379wbEBWu9zP7Ks9th4gb9T5xJUNiNNOzBGRlgsGIgEqohYRocsx816d8yPJh09KQ2uPEjR9F5pseqX1KFXHGeqbl6xylpYI6r30du0fOs=
 go:
-  - "1.11"
-
+- '1.11'
 script: go test ./...
-
 before_deploy:
-        - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
-        - docker tag "$IMAGE_NAME" "$IMAGE_NAME:latest"
-        - docker tag "$IMAGE_NAME" "$IMAGE_NAME:${version}"
+- docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+- docker tag "$IMAGE_NAME" "$IMAGE_NAME:latest"
+- docker tag "$IMAGE_NAME" "$IMAGE_NAME:${version}"
 deploy:
-        provider: script
-        script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:${version}"
-        on:
-                branch: master
-
+  provider: script
+  script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:${version}"
+  on:
+    branch: master
