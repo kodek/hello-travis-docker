@@ -1,7 +1,11 @@
 package main
 import "fmt"
+import "time"
 import hello "github.com/kodek/hello-travis-docker"
 
 func main() {
-	fmt.Println(hello.SayHi())
+	for {
+		fmt.Println(hello.SayHi())
+		time.Sleep(1 * time.Second)
+	}
 }
