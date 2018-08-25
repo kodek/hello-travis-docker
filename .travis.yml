@@ -8,7 +8,7 @@ go:
 - '1.11'
 script:
 - go test ./...
-- docker build -t . "${IMAGE_NAME}"
+- docker build -t "${IMAGE_NAME}" .
 before_deploy:
 - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
 - docker tag "$IMAGE_NAME" "$IMAGE_NAME:latest"
